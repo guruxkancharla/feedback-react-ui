@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useDebugValue } from "react";
 import RatingSelect from "./RatingSelect";
 import Button from "./shared/Button";
 import Card from "./shared/Card";
@@ -16,9 +16,10 @@ export default function FeedbackForm() {
       setText(feedbackEdit.item.text);
       setRating(feedbackEdit.item.rating);
       deleteFeedback(feedbackEdit.item.id);
+
       feedbackEdit.edit = false;
     }
-  }, [feedbackEdit]);
+  }, [feedbackEdit, deleteFeedback]);
 
   const handleTextChange = (e) => setText(e.target.value);
   const handleSubmit = (e) => {

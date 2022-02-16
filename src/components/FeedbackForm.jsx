@@ -6,7 +6,7 @@ import FeedbackContext from "../context/FeedbackContext";
 
 export default function FeedbackForm() {
   const [text, setText] = useState("");
-  const [rating, setRating] = useState();
+  const [rating, setRating] = useState(10);
 
   const { addFeedback, feedbackEdit, deleteFeedback } =
     useContext(FeedbackContext);
